@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "SERVICEBUSTOPICNAME",
+    "type": "java.lang.String",
+    "description": "A description for 'SERVICEBUSTOPICNAME'"
+  },
+  {
+    "name": "SERVICEBUSSUBSCRIPTIONNAME",
+    "type": "java.lang.String",
+    "description": "A description for 'SERVICEBUSSUBSCRIPTIONNAME'"
+  },
+  {
+    "name": "SERVICEBUSDESTINATIONNAME",
+    "type": "java.lang.String",
+    "description": "A description for 'SERVICEBUSDESTINATIONNAME'"
+  }
+]}

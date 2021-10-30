@@ -1,0 +1,29 @@
+version: "3.2"
+
+services:
+
+  application-insights-demo:
+    image: mrmyiagi/application-insights-demo
+    container_name: application-insights-demo
+    build:
+        context: .
+        dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 8280:8080
+    environment: 
+      - azure.application-insights.instrumentation-key=1234
+      - spring.application.name=application-insights-demo
+      - azure.application-insights.quick-pulse.enabled=true
+      - logging.level.ROOT=INFO
+      - logging.level.de.schmittformatik.application.insights=INFO
+      - azure.keyvault.client-id=1234
+      - azure.keyvault.client-key=1234
+      - azure.keyvault.enabled=true
+      - azure.keyvault.tenant-id=f38a3a5a-f715-4a37-a8b4-b8ed47a3c08b
+      - azure.keyvault.uri=replaced_by_infrastructure
+
+networks:
+  default:
+    external:
+      name: appinsights-network

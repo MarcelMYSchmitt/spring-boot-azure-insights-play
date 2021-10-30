@@ -1,0 +1,16 @@
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Kostenlose Testversion(1)(83332668-b01c-432c-bf51-17d1b3a6eb95)'
+    scriptType: 'pscore'
+    scriptLocation: 'scriptPath'
+    scriptPath: 'createInfrastructure.ps1'
+    arguments: '-SubscriptionId $(SubscriptionId) -TenantId $(TenantId) -ServicePrincipalId $(ServicePrincipalId) -ServicePrincipalPassword $(ServicePrincipalPassword) -LocationTag $(LocationTag) -EnvironmentTag $(EnvironmentTag) -ProjectTag $(ProjectTag)'
